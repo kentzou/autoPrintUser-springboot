@@ -38,20 +38,18 @@ public class SecretController {
     @PostMapping(value = "/api/info")
     ApiResponse create(@RequestBody SecretRequest request) {
 
-        SecretInfo secret = new SecretInfo();
-        String number = secret.getNumber();
-        String sec = secret.getSec();
-        String change_chlothes_key = secret.getChange_chlothes_key();
-        String make_identify_key = secret.getMake_identify_key();
+        SecretInfo info = new SecretInfo();
 
-        if (request.getAction().equals("number")) {
-            return ApiResponse.ok(number);
-        } else if (request.getAction().equals("sec")) {
-            return ApiResponse.ok(sec);
+        if (request.getAction().equals("appid")) {
+            return ApiResponse.ok(info.getAppid());
+        } else if (request.getAction().equals("secret")) {
+            return ApiResponse.ok(info.getSecret());
         }  else if (request.getAction().equals("change_chlothes_key")) {
-            return ApiResponse.ok(change_chlothes_key);
+            return ApiResponse.ok(info.getChange_chlothes_key());
         } else if (request.getAction().equals("make_identify_key")) {
-            return ApiResponse.ok(make_identify_key);
+            return ApiResponse.ok(info.getMake_identify_key());
+        }else if (request.getAction().equals("baseURL")) {
+            return ApiResponse.ok(info.getBaseURL());
         }else {
             return ApiResponse.error("参数action错误");
         }
