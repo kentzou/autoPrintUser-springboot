@@ -20,7 +20,7 @@ public class SecretController {
      * 获取当前计数
      * @return API response json
      */
-    @GetMapping(value = "/api/info")
+    @GetMapping(value = "/api/num")
     ApiResponse get() {
         SecretInfo secret = new SecretInfo();
         String number = secret.getNumber();
@@ -48,7 +48,7 @@ public class SecretController {
             return ApiResponse.ok(number);
         } else if (request.getAction().equals("sec")) {
             return ApiResponse.ok(sec);
-        }  else if (request.getAction().equals("change_chlothes_key")) {
+        }  else if (request.getAction().equals("photo")) {
             return ApiResponse.ok(change_chlothes_key);
         } else if (request.getAction().equals("make_identify_key")) {
             return ApiResponse.ok(make_identify_key);
