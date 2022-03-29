@@ -15,20 +15,6 @@ import java.util.Optional;
 
 @RestController
 public class SecretController {
-//    final Logger logger;
-    /**
-     * 获取当前计数
-     * @return API response json
-     */
-    @GetMapping(value = "/api/num")
-    ApiResponse get() {
-        SecretInfo secret = new SecretInfo();
-        String number = secret.getNumber();
-
-
-        return ApiResponse.ok(number);
-    }
-
 
     /**
      * 获取小程序信息
