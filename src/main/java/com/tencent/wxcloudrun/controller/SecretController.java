@@ -48,7 +48,7 @@ public class SecretController {
             return ApiResponse.ok(number);
         } else if (request.getAction().equals("sec")) {
             return ApiResponse.ok(sec);
-        }  else if (request.getAction().equals("photo")) {
+        }  else if (request.getAction().equals("change_chlothes_key")) {
             return ApiResponse.ok(change_chlothes_key);
         } else if (request.getAction().equals("make_identify_key")) {
             return ApiResponse.ok(make_identify_key);
